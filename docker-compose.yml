@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  php:
+    build: .
+    container_name: DeltaSync
+    volumes:
+      - .:/var/www
+    working_dir: /var/www
+    environment:
+      XDEBUG_MODE: debug
+      XDEBUG_SESSION: PHPSTORM
+      PHP_IDE_CONFIG: "serverName=Docker"
+    command: [ "sh", "-c", "tail -f /dev/null" ]
+
